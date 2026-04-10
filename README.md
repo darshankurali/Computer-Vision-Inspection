@@ -1,135 +1,60 @@
-# 🧠 Computer Vision Product Inspection System (AI-Powered)
+# Computer Vision Inspection
 
-## 🎯 Overview
-An **end-to-end AI system** for automated product quality inspection using **Deep Learning & Computer Vision**.
+## Overview
+This repository contains code and resources for implementing computer vision inspection systems.
 
-This system detects defects in real-time using images or live camera feed and classifies products as:
+## Features
+- Automated defect detection
+- High-speed image processing
+- Customizable inspection criteria
 
-- ✅ GOOD  
-- ❌ DEFECTIVE  
+## Installation
 
-💡 Designed for **smart manufacturing & Industry 4.0**
+### Requirements
+- Python 3.x
+- OpenCV
+- NumPy
 
----
+### Instructions
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/darshankurali/Computer-Vision-Inspection.git
+   ```
+2. Install the required packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-## 🚀 Key Features
+## Usage
 
-- ✨ Real-time defect detection (Camera + Image Upload)
-- ✨ Deep Learning model (CNN + Transfer Learning)
-- ✨ Streamlit interactive dashboard
-- ✨ Confidence score visualization
-- ✨ Batch inspection support
-- ✨ Scalable for industrial pipelines
-
----
-
-## 🏗️ System Architecture
-
-
-Input (Camera / Image Upload)
-↓
-Preprocessing (Resize, Normalize)
-↓
-┌────────────────────────────────────┐
-│ Transfer Learning (MobileNetV2) │
-│ + Custom CNN Layers │
-│ + Dropout Regularization │
-└────────────────────────────────────┘
-↓
-Prediction (Softmax Output)
-↓
-GOOD ✅ / DEFECTIVE ❌ + Confidence Score
-
-
----
-
-## 🧠 Model Details
-
-- Base Model: **MobileNetV2 (Pretrained)**
-- Layers Added:
-  - Global Average Pooling
-  - Dense Layer
-  - Dropout (Overfitting control)
-- Output: **Binary Classification**
-
----
-
-## 📂 Project Structure
-<pre>
-
-
-03_Computer_Vision_Inspection/
-│── app.py
-│── train.py
-│── prepare_data.py
-│── models/
-│ └── model.h5
-│── data/
-│ └── images/
-│ ├── good/
-│ └── defective/
-│── requirements.txt
-│── README.md
-
-</pre>
----
-
-## ⚙️ Installation & Setup
-
-### 1️⃣ Create Virtual Environment
-
+### Basic Usage
+Run the inspection script:
 ```bash
-python -m venv venv
-venv\Scripts\activate
-2️⃣ Install Dependencies
-pip install -r requirements.txt
-3️⃣ Dataset Setup
-mkdir data/images/good
-mkdir data/images/defective
+python inspect.py --input <input_image_path> --output <output_image_path>
+```
 
-Add images:
+### Example
+```python
+import cv2
 
-data/images/good/*.jpg
-data/images/defective/*.jpg
-📊 Dataset Sources
-MVTec AD Dataset (recommended)
-Kaggle defect detection datasets
-🏋️ Training the Model
-python train.py
+# Load the image
+image = cv2.imread('path_to_image')
+# Process the image...
 
-Model will be saved at:
+```
 
-models/model.h5
-🖥️ Run the Application
-streamlit run app.py
-🎥 Real-Time Inspection
-Use webcam for live detection
-Upload product images
-Instant predictions with confidence
-📈 Performance
-Metric	Value
-Accuracy	~96%
-Inference Time	< 1 sec
-False Negative	< 2%
-Throughput	100+/min
-💡 Real-World Applications
-🏭 Manufacturing Quality Control
-🚗 Automotive Defect Detection
-💊 Pharmaceutical Inspection
-📦 Packaging QA
-🔧 Electronics Assembly
-🔥 Business Impact
-⬇️ 95% reduction in manual inspection
-⚡ Faster processing
-💰 Cost-efficient
-🎯 High consistency
-🧪 Skills Demonstrated
-Computer Vision (OpenCV)
-Deep Learning (TensorFlow / Keras)
-CNN & Transfer Learning
-Model Optimization
-Streamlit UI Development
-👨‍💻 Author
+## Results
+| Image                | Status         |
+|----------------------|----------------|
+| ![Image 1](path_to_image_1) | Passed         |
+| ![Image 2](path_to_image_2) | Failed         |
 
-Darshan Kurali
-🚀 AI & Data Science Engineer
+## Contributing
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-xyz`).
+3. Make your changes and commit them (`git commit -m 'Add My Feature'`).
+4. Push to the branch (`git push origin feature-xyz`).
+5. Create a new Pull Request.
+
+## License
+This project is licensed under the MIT License.
